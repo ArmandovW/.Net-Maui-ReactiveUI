@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppRxUI.Views.EmployeePage"
+             Title="EmployeePage">
+    <VerticalStackLayout>
+		<Entry Text="{Binding SearchQuery}" Placeholder="Search" Margin="3"/>
+		<ListView ItemsSource="{Binding Employees}" Margin="2">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<Frame CornerRadius="5" Margin="2" Padding="4">
+							<StackLayout Spacing="3">
+								<Label HorizontalOptions="Center" Text="{Binding Name}" FontSize="Large" TextColor="Black"/>
+								<Label HorizontalOptions="Center" Text="{Binding Email}" FontSize="Medium" TextColor="Gray"/>
+								<Label HorizontalOptions="Center" Text="{Binding PhoneNumber}" FontSize="Small" TextColor="Green"/>
+							</StackLayout>
+						</Frame>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</VerticalStackLayout>
+</ContentPage>
